@@ -1,0 +1,280 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9e9e9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+body.index-page {
+    background-image: url('../images/background.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
+}
+
+.transition-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.transition-bg.fade-out {
+    opacity: 0;
+}
+
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+h1, .button, .booking-form, .fade-in {
+    animation: fadeInUp 1s ease-in-out both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+h1 {
+    background-color: #ef9d32;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 7px;
+    border-radius: 12px;
+    font-size: 2em;
+}
+
+form.booking-form, form.confirmation-form {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    animation: fadeIn 1s ease-in-out;
+    font-size: 1.2em;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="date"], input[type="number"], select, textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.2em;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"].daterangepicker-input {
+    padding: 10px; /* Adjust padding */
+    font-size: 1em; /* Adjust font size */
+    height: 2.5em; /* Adjust height */
+}
+
+button, a.button {
+    padding: 15px 20px;
+    background-color: #c8841d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 10px 0; /* Add margin for spacing between buttons */
+}
+
+button:hover, a.button:hover {
+    background-color: #a06e14;
+    transform: translateY(-2px);
+}
+
+a.button.wide-button {
+    width: auto; /* Allow buttons to have auto width */
+    display: inline-block; /* Ensure buttons are inline-block */
+}
+
+a {
+    color: #c8841d;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #a06e14;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto; /* Added margin to center the table */
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+    background-color: rgba(255, 255, 255, 0.9); /* Added background color */
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Increased padding for better spacing */
+}
+
+th {
+    background-color: #333;
+    color: white;
+    text-align: left; /* Align text to the left */
+}
+
+td {
+    text-align: left; /* Align text to the left */
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: #c8841d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px; /* Added margin to separate from the table */
+}
+
+.button:hover {
+    background-color: #bfae90;
+    transform: translateY(-2px);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 400px; /* Set a max-height for the images */
+    object-fit: cover; /* Ensure images are cropped to fit the specified dimensions */
+}
+
+.logo-container {
+    text-align: center;
+    margin: 3px 0; /* Adjust this value to set the margin */
+}
+
+.logo {
+    max-width: 200px; /* Adjust the width as needed */
+    height: auto;
+}
+
+.room-image {
+    max-width: 100px;
+    height: auto;
+    margin: 5px;
+}
